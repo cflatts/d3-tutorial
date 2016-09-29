@@ -9,9 +9,22 @@
     <body>
 
         <div class = 'container'>
-            <script type = 'text/javascript'>d3.select('body').append('p').text('New paragraph!')</script>
-        </div>
+            <script type = 'text/javascript'>
 
+                var dataset = [5, 10, 15, 20, 25,]
+
+                d3.select('.container').selectAll('p')
+                    .data(dataset)
+                    .enter()
+                    .append('p')
+                    .text(function(data) {
+                        return 'I can count up to ' + data
+                    })
+
+
+
+            </script>
+        </div>
 
     </body>
 </html>
