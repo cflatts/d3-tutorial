@@ -9,7 +9,7 @@
     <body>
 
         <div class = 'container'>
-            <script type = 'text/javascript'>
+            <script type = 'text/javascript' class = 'usingEnter'>
 
                 var dataset = [5, 10, 15, 20, 25,]
 
@@ -19,9 +19,7 @@
                     .append('p')
                     .text(function(data) {
                         return 'I can count up to ' + data
-                    })
-
-
+                    }).style('color','red')
 
             </script>
         </div>
