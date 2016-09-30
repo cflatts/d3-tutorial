@@ -4,16 +4,17 @@
     <head>
         <title>D3 Tutorial</title>
         <script src="https://d3js.org/d3.v4.js"></script>
+        <link rel = 'stylesheet' type = 'text/css' href = 'styles/styles.css'>
     </head>
 
     <body>
 
-        <div class = 'container'>
+
             <script type = 'text/javascript' class = 'usingEnter'>
 
                 var dataset = [5, 10, 15, 20, 25,]
 
-                d3.select('.container').selectAll('p')
+                d3.select('body').selectAll('p')
                     .data(dataset)
                     .enter()
                     .append('p')
@@ -29,7 +30,18 @@
                     })
 
             </script>
-        </div>
+
+
+            <script type = 'text/javascript' class = 'usingAttribute'>
+
+                var dataset = [5, 10, 15, 20, 25]
+
+                d3.select('body').selectAll('div')
+                    .data(dataset)
+                    .enter()
+                    .append('div')
+                    .attr('class', 'bar')
+            </script>
 
     </body>
 </html>
