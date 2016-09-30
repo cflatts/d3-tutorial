@@ -41,7 +41,8 @@
                     .enter()
                     .append('div')
                     .attr('class', 'bar').style('height', function(data) {
-                        return data + 'px'
+                        var barHeight = 5*data
+                        return barHeight + 'px'
                     })
             </script>
 
