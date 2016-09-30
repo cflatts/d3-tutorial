@@ -5,3 +5,7 @@
     display: inline-block;
     margin-right: 2px;
 }
+
+rect {
+    background-color: red;
+}
