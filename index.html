@@ -32,7 +32,7 @@
             </script>
 
 
-            <script type = 'text/javascript' class = 'usingAttribute'>
+            <script type = 'text/javascript' class = 'usingAttrAndStyle'>
 
                 var dataset = [5, 10, 15, 20, 25]
 
@@ -40,7 +40,9 @@
                     .data(dataset)
                     .enter()
                     .append('div')
-                    .attr('class', 'bar')
+                    .attr('class', 'bar').style('height', function(data) {
+                        return data + 'px'
+                    })
             </script>
 
     </body>
