@@ -19,7 +19,14 @@
                     .append('p')
                     .text(function(data) {
                         return 'I can count up to ' + data
-                    }).style('color','red')
+                    }).style('color', function(data) {
+                        if(data < 15) {
+                            return 'red'
+                        }
+                        else {
+                            return 'black'
+                        }
+                    })
 
             </script>
         </div>
