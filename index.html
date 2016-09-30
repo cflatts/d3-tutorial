@@ -49,6 +49,7 @@
                         return barHeight + 'px'
                     })
             </script>
+
             <svg width = '500' height ='50'>
                 <rect x = '0' y ='0' width = '500' height = '50' />
                 <circle cx = '250' cy = '25' r = '25' stroke = 'orange' />
@@ -56,5 +57,28 @@
                 <line x1 = '0' y1 = '0' x2 = '500' y2 = '50' stroke = 'red'/>
             </svg>
 
+            <script type  = 'text/javascript' class = 'dataAndSVG'>
+
+                var w = 500
+                var h = 50
+                var svg = d3.select('body').append('svg').attr('width', 'w').attr('height', 'h')
+
+                var dataset = [5, 10, 15, 20, 25]
+
+                var circles = svg.selectAll('circle')
+                    .data(dataset)
+                    .enter()
+                    .append('circle')
+
+                circles.attr('cx', function(data, i) {
+                    return(i*50) + 25
+                })
+                .attr('cy', h/2)
+                .attr('r', function(data) {
+                    return data
+                })
+
+
+            </script>
     </body>
 </html>
