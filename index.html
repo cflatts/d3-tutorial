@@ -104,7 +104,7 @@
                     .attr('y', function(data) {
                         return h - data
                     })
-                    .attr('height', function(data) {
+                    .attr("height", function(data) {
                         return data
                     })
                     .attr('width', w / dataset.length - 1)
@@ -120,11 +120,15 @@
                         return data
                     })
                     .attr('x', function(data, i) {
-                        return i * (w/dataset.length)
+                        return i * (w/dataset.length) + 5
                     })
                     .attr('y', function(data, i) {
-                        return h - (data)
+                        return h - (data) + 15
                     })
+                    .attr('font-family', 'sans-serif')
+                    .attr('fill', 'white')
+                    .attr('font-size', 6)
+                    .attr('text-anchor', 'middle')
             </script>
     </body>
 </html>
