@@ -77,8 +77,54 @@
                 .attr('r', function(data) {
                     return data
                 })
+                .attr('fill', 'yellow')
+                .attr('stroke', 'orange')
+                .attr('stroke-width', function(data) {
+                    return data/2
+                })
 
+            </script>
 
+            <script type = 'text/javascript' class = 'barChart'>
+
+                var dataset = [5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                11, 12, 15, 20, 18, 17, 16, 18, 23, 25]
+
+                var w = 500
+                var h = 50
+                var svg = d3.select('body').append('svg').attr('height', h).attr('width', w)
+
+                svg.selectAll('rect')
+                    .data(dataset)
+                    .enter()
+                    .append('rect')
+                    .attr('x', function(data, i) {
+                        return i * (w / dataset.length)
+                    })
+                    .attr('y', function(data) {
+                        return h - data
+                    })
+                    .attr('height', function(data) {
+                        return data
+                    })
+                    .attr('width', w / dataset.length - 1)
+                    .attr('fill', function(data) {
+                        return 'rgb(0, 0 , '+ (data*10) + ')'
+                    })
+
+                svg.selectAll('text')
+                    .data(dataset)
+                    .enter()
+                    .append('text')
+                    .text(function(data) {
+                        return data
+                    })
+                    .attr('x', function(data, i) {
+                        return i * (w/dataset.length)
+                    })
+                    .attr('y', function(data, i) {
+                        return h - (data)
+                    })
             </script>
     </body>
 </html>
