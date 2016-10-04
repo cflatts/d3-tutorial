@@ -194,20 +194,21 @@
                                   [ 220,   88 ]
                               ]
                 var w = 1000
-                var h = 500
+                var h = 100
+                var padding = 20
                 var svg = d3.select('body').append('svg').attr('height', h).attr('width', w)
 
                 var xScale = d3.scaleLinear()
                             .domain([0, d3.max(dataset, function(data) {
                                 return data[0]
                             })])
-                            .range([0,w])
+                            .range([padding, w - padding])
 
                 var yScale = d3.scaleLinear()
                                     .domain([0, d3.max(dataset, function(data) {
                                         return data[1]
                                     })])
-                                    .range([0, h])
+                                    .range([h - padding, padding])
 
                 svg.selectAll('circle')
                     .data(dataset)
