@@ -202,13 +202,19 @@
                             .domain([0, d3.max(dataset, function(data) {
                                 return data[0]
                             })])
-                            .range([padding, w - padding])
+                            .range([padding, w - padding*2])
 
                 var yScale = d3.scaleLinear()
                                     .domain([0, d3.max(dataset, function(data) {
                                         return data[1]
                                     })])
                                     .range([h - padding, padding])
+
+                var rScale = d3.scaleLinear()
+                                .domain([0, d3.max(dataset, function(data) {
+                                    return data[1]
+                                })])
+                                .range([2,5])
 
                 svg.selectAll('circle')
                     .data(dataset)
@@ -220,7 +226,9 @@
                     .attr('cy', function(data) {
                         return yScale(data[1])
                     })
-                    .attr('r', 5)
+                    .attr('r', function(data) {
+                        return rScale(data[1])
+                    })
 
                 svg.selectAll('text')
                     .data(dataset)
